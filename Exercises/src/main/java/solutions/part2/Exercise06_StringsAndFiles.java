@@ -6,7 +6,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Beispielprogramm für den Workshop "Best of Java 9, 10 und 11" / das Buch "Java 9 -- Die Neuerungen"
@@ -27,7 +26,7 @@ public class Exercise06_StringsAndFiles
 		
 		final String content = Files.readString(filePath);
 		
-		final List<String> allLines = content.lines().collect(Collectors.toList());
+		final List<String> allLines = content.lines().toList();
 		allLines.forEach(System.out::println);
 		
 		// Multi-Line als neues Feature
