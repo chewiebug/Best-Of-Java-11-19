@@ -1,0 +1,44 @@
+#!/usr/bin/java --source 17
+package fileio;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class DirectoryTree
+{
+    public static void main(String[] args) throws IOException
+    {
+        printDirectory(Path.of("."), "");
+    }
+    
+    static void printDirectory(Path currentDir, String indent) throws IOException
+    {
+        try (Stream<Path> dirContent = Files.list(currentDir))
+        {        
+            List<Path> paths = dirContent.toList();
+                
+            for (int i = 0; i < paths.size(); i++)
+            {
+                Path path = paths.get(i);
+                boolean isLast = i == paths.size() - 1;
+    
+                System.out.print(indent);
+                
+                if (isLast)
+                    System.out.print("\\-- ");
+                else
+                    System.out.print("|-- ");
+    
+                System.out.println(path.getFileName());
+                if (Files.isDirectory(path))
+                {
+                    String newIndent = isLast ? "    " : "|   ";
+                    printDirectory(path, indent + newIndent);
+                }
+            }
+        }
+    }
+}

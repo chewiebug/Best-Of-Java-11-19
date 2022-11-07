@@ -1,0 +1,11 @@
+# Inhalt
+- Vorbemerkungen / Build Tools & IDEs
+- PART 1: Syntax-Erweiterungen & Neuheiten und Änderungen bis Java 11
+- PART 2: Weitere Neuheiten und Änderungen bis JDK 11
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- PART 3: Syntax-Erweiterungen & Neuheiten und Änderungen in Java 12 bis 17
+- PART 4: Neuheiten und Änderungen in den APIs in Java 12 bis 17
+- PART 5: Neuheiten und Änderungen in der JVM in Java 12 bis 17
+- PART 6: Neuheiten in Java 18
+- PART 7: Neuheiten in Java 19
+- Separat: Modularisierung im Kurzüberblick

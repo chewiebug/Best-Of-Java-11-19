@@ -1,0 +1,23 @@
+#!/usr/bin/java --source 11
+package direct.compilation;
+
+import java.nio.file.*;
+
+public class DirectoryLister 
+{
+	public static void main(String[] args) throws Exception 
+	{
+		var dirName = ".";
+
+		if (args == null || args.length < 1) 
+		{
+			System.err.println("Using current directory as fallback");
+		} 
+		else 
+		{
+			dirName = args[0];
+		}
+
+		Files.walk(Paths.get(dirName)).forEach(System.out::println);
+	}
+}

@@ -1,0 +1,47 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility=17
+targetCompatibility=17
+
+repositories
+{
+	mavenCentral();
+}
+
+dependencies
+{
+	// JUnit 4 Support
+	testCompile "junit:junit:4.13"
+	testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.8.2")
+  	
+  	// JUnit 5
+	testRuntimeOnly "org.junit.platform:junit-platform-launcher:1.8.2" 
+	testCompile "org.junit.jupiter:junit-jupiter-engine:5.8.2"
+		
+	// Asssert J
+	testCompile "org.assertj:assertj-core:3.22.0"
+	
+	// Parameterized tests
+	testCompile("org.junit.jupiter:junit-jupiter-params:5.8.2")
+	
+	// Migration Support to Enable Rules in JUnit 5
+	testCompile "org.junit.jupiter:junit-jupiter-migrationsupport:5.8.2"
+	
+	// Mockito
+	testCompile "org.mockito:mockito-core:4.5.1"
+	testCompile "org.mockito:mockito-junit-jupiter:4.5.1"
+}
+
+// JUnit 5 aktivieren
+test {
+    useJUnitPlatform()
+}
+
+
+test {
+	// für die Beispiele wollen wir Fehler nicht als Build-Fehler werten, da die Beispiel
+	// bewusst ein paar Fehler integriert haben
+  	ignoreFailures = true
+}
+
