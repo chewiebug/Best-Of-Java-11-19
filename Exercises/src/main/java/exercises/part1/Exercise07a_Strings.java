@@ -13,6 +13,8 @@ public class Exercise07a_Strings
 {
 	public static void main(String[] args) 
 	{
-		Stream.of(2,4,7,3,1,9,5); // TODO
+		Stream.of(2,4,7,3,1,9,5)
+				.map(number -> (number + "").repeat(number))
+				.forEach(System.out::println);
 	}
 }

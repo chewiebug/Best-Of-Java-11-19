@@ -14,10 +14,12 @@ public class Exercise06_Optional
 {
     public static void main(final String[] args)
     {
+        System.out.println("jdk8");
         final Optional<String> optCustomer = multiFindCustomerJdk8("Tim");
         optCustomer.ifPresentOrElse(str -> System.out.println("found: " + str), 
                                     () -> System.out.println("not found"));
 
+        System.out.println("jdk9");
         final Optional<String> optCustomer2 = multiFindCustomerJdk9("Tim");
         optCustomer2.ifPresentOrElse(str -> System.out.println("found: " + str), 
                                      () -> System.out.println("not found"));
@@ -26,7 +28,9 @@ public class Exercise06_Optional
 	private static Optional<String> multiFindCustomerJdk9(final String customerId)
     {
         // TODO
-        return Optional.empty();
+        return findInCache(customerId)
+                .or(() -> findInMemory(customerId))
+                .or(() -> findInDb(customerId));
     }
     
     private static Optional<String> multiFindCustomerJdk8(final String customerId)

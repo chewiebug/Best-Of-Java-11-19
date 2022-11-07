@@ -11,9 +11,15 @@ import java.util.stream.Stream;
  */
 public class Exercise07b_Strings 
 {
+	static final int WIDTH = 10;
+	static final String PADDING_CHARACTER = " ";
+
 	public static void main(String[] args) 
 	{
-		Stream.of(2,4,7,3,1,9,5); // TODO
+		Stream.of(2,4,7,3,1,9,5)
+				.map(number -> (number + "").repeat(number))
+				.map(repeatedText -> PADDING_CHARACTER.repeat(WIDTH - repeatedText.length()) + repeatedText)
+				.forEach(System.out::println); // TODO
 	}
 	
 	private static String formatRightAligned(final int num, final int desiredLength)
@@ -22,4 +28,5 @@ public class Exercise07b_Strings
 		
 		return "";
 	}
+
 }
