@@ -43,11 +43,11 @@ public class Exercise05_RecordAndTextblock {
 		String toJSON() 
 		{
 			return """
-					(
+					{
 					 	"firstName" : "%s",
-						"lastName" : "%s", 
+						"lastName" : "%s",
 						"birthday" : "%s"
-					)
+					}
 					""".formatted(firstName, lastName, birthday);
 		}
 	}

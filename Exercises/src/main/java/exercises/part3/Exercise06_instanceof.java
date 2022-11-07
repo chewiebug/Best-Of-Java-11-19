@@ -21,5 +21,9 @@ public class Exercise06_instanceof
 		         System.out.println("It contains the magic word!");
 		    }
 		}
+
+		if (obj instanceof String text && text.contains("BITTE")) {
+			System.out.println("'" + text + "' contains the magic word!");
+		}
 	}
 }

@@ -17,7 +17,12 @@ public class Exercise02_TextBlocks
 	            "WITH A BACKSLASH \\\n";
 			System.out.println(multiLineStringOld);
 
-		String multiLineString = null; // TODO;
+		String multiLineString = """
+				THIS IS
+				A MULTI
+				LINE STRING
+				WITH A BACKSLASH \\
+				""";
 		System.out.println(multiLineString);
 		
 		String multiLineHtmlOld = "<html>\n" +
@@ -27,7 +32,12 @@ public class Exercise02_TextBlocks
                 "</html>";
 		System.out.println(multiLineHtmlOld);
 
-		String multiLineHtml = null; // TODO;
+		String multiLineHtml = """
+				<html>
+				    <body>
+				        <p>Hello, world</p>
+				    </body>
+				</html>""";
 		System.out.println(multiLineHtml);
 		
 		String javaScriptObjOld = ""
@@ -38,8 +48,14 @@ public class Exercise02_TextBlocks
 				+ "}\n";
 		System.out.println(javaScriptObjOld);
 
-		String avaScriptObj = null; // TODO
-		System.out.println(avaScriptObj);
+		String javaScriptObj = """
+				{
+				    "version": "Java13",
+				    "feature": "text blocks",
+				    "attention": "preview!"
+				}
+				""";
+		System.out.println(javaScriptObj);
 
 	}
 }

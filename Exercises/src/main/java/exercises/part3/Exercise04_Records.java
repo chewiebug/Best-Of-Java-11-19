@@ -9,23 +9,29 @@ package exercises.part3;
  */
 public class Exercise04_Records 
 {
-	class Square 
+	class Square
 	{
 		public final double sideLength;
-	
-		public Square(final double sideLength) 
+
+		public Square(final double sideLength)
 		{
 			this.sideLength = sideLength;
 		}
 	}
+
+	record SquareRecord(double sideLength) {
+	}
 	
-	class Circle 
+	class Circle
 	{
 		public final double radius;
-	
-		public Circle(final double radius) 
+
+		public Circle(final double radius)
 		{
 			this.radius = radius;
 		}
+	}
+
+	record CircleRecord(double radius) {
 	}
 }

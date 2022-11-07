@@ -17,7 +17,11 @@ public class Exercise03_TextBlocks_Placeholders
 				 new Object[]{"WORLD", "A", "DAY"});
 		System.out.println(multiLineStringWithPlaceHoldersOld);
 
-		String multiLineStringWithPlaceHolders = null; // TODO
+		String multiLineStringWithPlaceHolders = """
+						HELLO "%s"!
+						  HAVE %s
+						  NICE "%s"!"""
+				.formatted("WORLD", "A", "DAY");
 		System.out.println(multiLineStringWithPlaceHolders);		
 	}
 }

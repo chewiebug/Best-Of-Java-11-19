@@ -13,10 +13,10 @@ public class Exercise01_switch
 
 		int value = 7;
 
-		dumbEvenOddChecker(value);
+		evenOddCheckerDumb(value);
 	}
 
-	private static void dumbEvenOddChecker(int value) {
+	private static void evenOddCheckerDumb(int value) {
 		String result;
 
 		switch (value) {
@@ -34,4 +34,26 @@ public class Exercise01_switch
 
 		System.out.println("result: " + result);
 	}
+
+	private String evenOddCheckerArrow(int value) {
+
+		return switch (value) {
+			case 1, 3, 5, 7, 9 -> "odd";
+			case 0, 2, 4, 6, 8, 10 -> "even";
+			default -> "only implemented for values < 10";
+		};
+	}
+
+	private String evenOddCheckerYield(int value) {
+
+		return switch (value) {
+			case 1, 3, 5, 7, 9:
+				yield "odd";
+			case 0, 2, 4, 6, 8, 10:
+				yield "even";
+			default:
+				yield "only implemented for values < 10";
+		};
+	}
+
 }
